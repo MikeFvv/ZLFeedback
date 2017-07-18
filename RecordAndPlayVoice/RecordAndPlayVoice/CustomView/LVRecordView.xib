@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LVRecordView">
+            <rect key="frame" x="0.0" y="0.0" width="248" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b06-Oe-OJM">
+                    <rect key="frame" x="164" y="80" width="64" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="1" blue="0.50196081399917603" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="EOQ-rL-Tei"/>
+                    </constraints>
+                    <state key="normal" title="播放按钮">
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mic_0" translatesAutoresizingMaskIntoConstraints="NO" id="IRp-t8-iqi">
+                    <rect key="frame" x="51" y="9" width="64" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="64" id="Ezy-am-5VY"/>
+                        <constraint firstAttribute="height" constant="64" id="yuQ-kp-14b"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IY3-xL-XKB">
+                    <rect key="frame" x="20" y="80" width="127" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="wpM-NM-B43"/>
+                    </constraints>
+                    <state key="normal" title="录音按钮">
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trg-P6-Kfy">
+                    <rect key="frame" x="196.5" y="60" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="b06-Oe-OJM" firstAttribute="top" secondItem="trg-P6-Kfy" secondAttribute="bottom" constant="20" id="0cc-UM-gDs"/>
+                <constraint firstItem="IY3-xL-XKB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="38H-Da-BhW"/>
+                <constraint firstAttribute="bottom" secondItem="IY3-xL-XKB" secondAttribute="bottom" id="F7U-0I-hf4"/>
+                <constraint firstItem="IRp-t8-iqi" firstAttribute="centerX" secondItem="IY3-xL-XKB" secondAttribute="centerX" id="P7f-Gu-48i"/>
+                <constraint firstItem="b06-Oe-OJM" firstAttribute="leading" secondItem="IY3-xL-XKB" secondAttribute="trailing" constant="17" id="SzE-sT-3un"/>
+                <constraint firstItem="trg-P6-Kfy" firstAttribute="centerX" secondItem="b06-Oe-OJM" secondAttribute="centerX" id="Y2g-gA-x4I"/>
+                <constraint firstAttribute="bottom" secondItem="b06-Oe-OJM" secondAttribute="bottom" id="Yto-g5-OVZ"/>
+                <constraint firstItem="b06-Oe-OJM" firstAttribute="width" secondItem="IY3-xL-XKB" secondAttribute="height" multiplier="8:5" id="aEh-7y-LFu"/>
+                <constraint firstAttribute="trailing" secondItem="b06-Oe-OJM" secondAttribute="trailing" constant="20" id="aS5-7H-MDU"/>
+                <constraint firstItem="IY3-xL-XKB" firstAttribute="top" secondItem="IRp-t8-iqi" secondAttribute="bottom" constant="7" id="rsx-as-AvO"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageView" destination="IRp-t8-iqi" id="S6t-qg-Pq4"/>
+                <outlet property="playBtn" destination="b06-Oe-OJM" id="fYP-QH-06E"/>
+                <outlet property="recordBtn" destination="IY3-xL-XKB" id="jii-fk-SDP"/>
+                <outlet property="timeLB" destination="trg-P6-Kfy" id="8gR-JA-tOH"/>
+            </connections>
+            <point key="canvasLocation" x="-44" y="-273"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="mic_0" width="128" height="128"/>
+    </resources>
+</document>
