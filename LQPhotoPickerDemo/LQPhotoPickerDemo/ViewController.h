@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LQPhotoPickerViewController.h"
+#import "LVRecordView.h"
 @interface ViewController : LQPhotoPickerViewController<UITextViewDelegate>
 
 
@@ -16,6 +17,9 @@
 @property(nonatomic,strong) UIView *noteTextBackgroudView;
 //备注
 @property(nonatomic,strong) UITextView *noteTextView;
+
+@property (nonatomic, strong) LVRecordView *recordView;
+
 
 //文字个数提示label
 @property(nonatomic,strong) UILabel *textNumberLabel;

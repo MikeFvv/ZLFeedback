@@ -112,7 +112,11 @@ static NSString * const reuseIdentifier = @"LQPhotoViewCell";
     if (indexPath.row == _LQPhotoPicker_smallImageArray.count) {
         [cell.profilePhoto setImage:[UIImage imageNamed:pushImgName]];
         cell.closeButton.hidden = YES;
-        
+        NSLog(@"%ld", _LQPhotoPicker_smallImageArray.count);
+        if (_LQPhotoPicker_smallImageArray.count == _LQPhotoPicker_imgMaxCount) {
+            [cell.profilePhoto setImage:[UIImage imageNamed:@""]];
+            cell.closeButton.hidden = YES;
+        }
         //没有任何图片
         if (_LQPhotoPicker_smallImageArray.count == 0) {
             addImgStrLabel.hidden = NO;
@@ -125,6 +129,7 @@ static NSString * const reuseIdentifier = @"LQPhotoViewCell";
         [cell.profilePhoto setImage:_LQPhotoPicker_smallImageArray[indexPath.item]];
         cell.closeButton.hidden = NO;
     }
+    
     [cell setBigImgViewWithImage:nil];
     cell.profilePhoto.tag = [indexPath item];
     
@@ -218,9 +223,12 @@ static NSString * const reuseIdentifier = @"LQPhotoViewCell";
         LQPhotoViewCell *cell = (LQPhotoViewCell*)[self.pickerCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:item inSection:0]];
         cell.closeButton.tag--;
         cell.profilePhoto.tag--;
+        [cell.profilePhoto setImage:[UIImage imageNamed:pushImgName]];
+        cell.closeButton.hidden = YES;
     }
     //没有任何图片
     if (_LQPhotoPicker_smallImageArray.count == 0) {
+        
         addImgStrLabel.hidden = NO;
     }
     else{
@@ -317,6 +325,8 @@ static NSString * const reuseIdentifier = @"LQPhotoViewCell";
         _LQPhotoPicker_bigImgDataArray = [NSMutableArray array];
         for (ALAsset *set in _LQPhotoPicker_selectedAssetArray) {
             [_LQPhotoPicker_bigImageArray addObject:[self getBigIamgeWithALAsset:set]];
+            NSData *bigImgData = UIImagePNGRepresentation([self getBigIamgeWithALAsset:set]);
+            [_LQPhotoPicker_bigImgDataArray addObject: bigImgData];
         }
 
     return _LQPhotoPicker_bigImgDataArray;

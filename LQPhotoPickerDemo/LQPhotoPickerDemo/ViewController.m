@@ -10,6 +10,8 @@
 #define SCREENWIDTH [UIScreen mainScreen].bounds.size.width//获取设备宽度
 
 #import "ViewController.h"
+#import "FBNetManager.h"
+
 
 @interface ViewController ()<LQPhotoPickerViewDelegate>
 {
@@ -38,7 +40,7 @@
      */
     self.LQPhotoPicker_superView = _scrollView;
     
-    self.LQPhotoPicker_imgMaxCount = 10;
+    self.LQPhotoPicker_imgMaxCount = 1;
     
     [self LQPhotoPicker_initPickerView];
     
@@ -87,11 +89,16 @@
     [_submitBtn setBackgroundColor:[UIColor colorWithRed:255.0/255.0 green:155.0/255.0 blue:0.0/255.0 alpha:1.0]];
     [_submitBtn addTarget:self action:@selector(submitBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     
+    self.recordView = [LVRecordView recordView];
+    self.recordView.backgroundColor = [UIColor lightGrayColor];
+    
+    
     [_scrollView addSubview:_noteTextBackgroudView];
     [_scrollView addSubview:_noteTextView];
     [_scrollView addSubview:_textNumberLabel];
     [_scrollView addSubview:_explainLabel];
     [_scrollView addSubview:_submitBtn];
+    [_scrollView addSubview: _recordView];
     
     [self updateViewsFrame];
 }
@@ -126,6 +133,8 @@
     _submitBtn.bounds = CGRectMake(10, _explainLabel.frame.origin.y+_explainLabel.frame.size.height +30, SCREENWIDTH -20, 40);
     _submitBtn.frame = CGRectMake(10, _explainLabel.frame.origin.y+_explainLabel.frame.size.height +30, SCREENWIDTH -20, 40);
     
+
+    self.recordView.frame = CGRectMake(10, _explainLabel.frame.origin.y+_explainLabel.frame.size.height +30+60, SCREENWIDTH -20, 100);
     
     allViewHeight = noteTextHeight + [self LQPhotoPicker_getPickerViewFrame].size.height + 30 + 100;
     
@@ -210,9 +219,49 @@
     
     //小图数据
     NSMutableArray *smallImageDataArray = [self LQPhotoPicker_getSmallDataImageArray];
+//    NSData *d = UIImagePNGRepresentation(bigImageDataArray[0]);
+//    NSLog(@"%@", bigImageDataArray);
     
+//    for (int i = 0; i< bigImageDataArray.count; i++) {
+//        UIImage *image = [UIImage imageWithData: bigImageDataArray[i]];
+//        [self saveImageDocuments:image withImageName:[NSString stringWithFormat:@"%d.png",i]];
+//    }
+
+    NSString *recoStr = [[NSUserDefaults standardUserDefaults] objectForKey:@"rPath"];
+    NSLog(@"录音文件地址%@",recoStr);
     
+    NSData *d = UIImagePNGRepresentation([UIImage imageNamed:@"锁"]);
+    [FBNetManager postUploadWithUrl:@"https://www.pigo-tech.com/feedback/postFeedback.php" fileData: bigImageDataArray[0] fileName:@"122.png" fileType:@"image/png" success:^(id responseObject) {
+        NSString *s = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSLog(@"22222  %@",s);
+    } fail:^{
+        NSLog(@"hahhahaha");
+    }];
     
+}
+
+
+
+//保存图片
+-(void)saveImageDocuments:(UIImage *)image withImageName: (NSString *)imageName{
+    NSFileManager *fileManager = [[NSFileManager alloc] init];
+    NSString *pathDocuments = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *createPath = [NSString stringWithFormat:@"%@/BFImage", pathDocuments];
+    
+    // 判断文件夹是否存在，如果不存在，则创建
+    if (![[NSFileManager defaultManager] fileExistsAtPath:createPath]) {
+        [fileManager createDirectoryAtPath:createPath withIntermediateDirectories:YES attributes:nil error:nil];
+       
+    } else {
+        NSLog(@"FileDir is exists.");
+    }
+    //拿到图片
+    UIImage *imagesave = image;
+    NSString *path_sandox = NSHomeDirectory();
+    //设置一个图片的存储路径
+    NSString *imagePath = [path_sandox stringByAppendingString:[NSString stringWithFormat:@"/Documents/BFIMG/%@",imageName]];
+    //把图片直接保存到指定的路径（同时应该把图片的路径imagePath存起来，下次就可以直接用来取）
+    [UIImagePNGRepresentation(imagesave) writeToFile:imagePath atomically:YES];
 }
 
 - (void)LQPhotoPicker_pickerViewFrameChanged{

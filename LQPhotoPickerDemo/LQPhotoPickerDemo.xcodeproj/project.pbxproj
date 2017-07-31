@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4719264A1F2CD34E002451F5 /* LVRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 471926481F2CD34E002451F5 /* LVRecordView.m */; };
+		4719264B1F2CD34E002451F5 /* LVRecordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 471926491F2CD34E002451F5 /* LVRecordView.xib */; };
+		4719264E1F2CD370002451F5 /* LVRecordTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4719264D1F2CD370002451F5 /* LVRecordTool.m */; };
+		47F38E511F1EEFB600C012C9 /* FBNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F38E501F1EEFB600C012C9 /* FBNetManager.m */; };
 		61439CB1067C8125463666EA /* libPods-LQPhotoPickerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B20D0CBB0582FF09246FF4 /* libPods-LQPhotoPickerDemo.a */; };
 		A40A89171C9E643C00C8AEBA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A89161C9E643C00C8AEBA /* main.m */; };
 		A40A891A1C9E643C00C8AEBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A89191C9E643C00C8AEBA /* AppDelegate.m */; };
@@ -67,6 +71,13 @@
 
 /* Begin PBXFileReference section */
 		23B20D0CBB0582FF09246FF4 /* libPods-LQPhotoPickerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LQPhotoPickerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		471926471F2CD34E002451F5 /* LVRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVRecordView.h; sourceTree = "<group>"; };
+		471926481F2CD34E002451F5 /* LVRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVRecordView.m; sourceTree = "<group>"; };
+		471926491F2CD34E002451F5 /* LVRecordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LVRecordView.xib; sourceTree = "<group>"; };
+		4719264C1F2CD370002451F5 /* LVRecordTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVRecordTool.h; sourceTree = "<group>"; };
+		4719264D1F2CD370002451F5 /* LVRecordTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVRecordTool.m; sourceTree = "<group>"; };
+		47F38E4F1F1EEFB600C012C9 /* FBNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBNetManager.h; sourceTree = "<group>"; };
+		47F38E501F1EEFB600C012C9 /* FBNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBNetManager.m; sourceTree = "<group>"; };
 		9590F267659FEF40A0070B51 /* Pods-LQPhotoPickerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LQPhotoPickerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LQPhotoPickerDemo/Pods-LQPhotoPickerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		9A5CB46B0279D8765514AED4 /* Pods-LQPhotoPickerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LQPhotoPickerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LQPhotoPickerDemo/Pods-LQPhotoPickerDemo.release.xcconfig"; sourceTree = "<group>"; };
 		A40A89121C9E643C00C8AEBA /* LQPhotoPickerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LQPhotoPickerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +201,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		471926461F2CD34E002451F5 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				4719264C1F2CD370002451F5 /* LVRecordTool.h */,
+				4719264D1F2CD370002451F5 /* LVRecordTool.m */,
+				471926471F2CD34E002451F5 /* LVRecordView.h */,
+				471926481F2CD34E002451F5 /* LVRecordView.m */,
+				471926491F2CD34E002451F5 /* LVRecordView.xib */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		A40A89091C9E643C00C8AEBA = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +243,8 @@
 				A40A89191C9E643C00C8AEBA /* AppDelegate.m */,
 				A40A891B1C9E643C00C8AEBA /* ViewController.h */,
 				A40A891C1C9E643C00C8AEBA /* ViewController.m */,
+				47F38E4F1F1EEFB600C012C9 /* FBNetManager.h */,
+				47F38E501F1EEFB600C012C9 /* FBNetManager.m */,
 				A40A891E1C9E643C00C8AEBA /* Main.storyboard */,
 				A40A89211C9E643C00C8AEBA /* Assets.xcassets */,
 				A40A89231C9E643C00C8AEBA /* LaunchScreen.storyboard */,
@@ -240,6 +265,7 @@
 		A40A892C1C9E648E00C8AEBA /* LQPhotoPicker */ = {
 			isa = PBXGroup;
 			children = (
+				471926461F2CD34E002451F5 /* CustomView */,
 				A40A892D1C9E648E00C8AEBA /* img */,
 				A40A893A1C9E648E00C8AEBA /* LQImgPicker */,
 				A40A89661C9E648E00C8AEBA /* LQPhotoPickerViewController.h */,
@@ -481,6 +507,7 @@
 				A40A897E1C9E648E00C8AEBA /* none.png in Resources */,
 				A40A89701C9E648E00C8AEBA /* ico_check_nomal@3x.png in Resources */,
 				A40A898C1C9E648E00C8AEBA /* LQPhotoViewCell.xib in Resources */,
+				4719264B1F2CD34E002451F5 /* LVRecordView.xib in Resources */,
 				A40A89201C9E643C00C8AEBA /* Main.storyboard in Resources */,
 				A40A89761C9E648E00C8AEBA /* plus@3x.png in Resources */,
 			);
@@ -550,7 +577,9 @@
 				A40A897A1C9E648E00C8AEBA /* JJMainScrollView.m in Sources */,
 				A40A897C1C9E648E00C8AEBA /* JJPhoto.m in Sources */,
 				E6F645111D61AE7D000FFE47 /* SDWebImageCompat.m in Sources */,
+				47F38E511F1EEFB600C012C9 /* FBNetManager.m in Sources */,
 				E6F645101D61AE7D000FFE47 /* SDImageCache.m in Sources */,
+				4719264A1F2CD34E002451F5 /* LVRecordView.m in Sources */,
 				E6F645191D61AE7D000FFE47 /* UIImage+MultiFormat.m in Sources */,
 				E6F645181D61AE7D000FFE47 /* UIImage+GIF.m in Sources */,
 				E6F645131D61AE7D000FFE47 /* SDWebImageDownloader.m in Sources */,
@@ -563,6 +592,7 @@
 				A40A89821C9E648E00C8AEBA /* MImaCell.m in Sources */,
 				A40A897B1C9E648E00C8AEBA /* JJOneScrollView.m in Sources */,
 				A40A89881C9E648E00C8AEBA /* SDLoopProgressView.m in Sources */,
+				4719264E1F2CD370002451F5 /* LVRecordTool.m in Sources */,
 				E6F645141D61AE7D000FFE47 /* SDWebImageDownloaderOperation.m in Sources */,
 				A40A89851C9E648E00C8AEBA /* MShowAllGroup.m in Sources */,
 				A40A891A1C9E643C00C8AEBA /* AppDelegate.m in Sources */,
