@@ -10,5 +10,5 @@
 #import <AFNetworking.h>
 
 @interface FBNetManager : NSObject
-+ (void)postUploadWithUrl:(NSString *)urlStr fileData:(NSData *)fileData fileName:(NSString *)fileName fileType:(NSString *)fileTye success:(void (^)(id responseObject))success fail:(void (^)())fail;
++ (void)postUploadWithUrl:(NSString *)urlStr myText: (NSString *)myText myContact: (NSString *)myContact voiceFileData:(NSData *)voiceFileData voiceFileName:(NSString *)voiceFileName voiceFileType:(NSString *)voiceFileTye andImgFileData:(NSData *)imgFileData imgFileName:(NSString *)imgFileName imgFileType:(NSString *)imgFileTye success:(void (^)(id responseObject))success fail:(void (^)())fail;
 @end

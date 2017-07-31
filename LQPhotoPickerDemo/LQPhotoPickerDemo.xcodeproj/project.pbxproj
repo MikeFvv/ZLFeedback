@@ -467,7 +467,7 @@
 				TargetAttributes = {
 					A40A89111C9E643C00C8AEBA = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 8V8QNTU33M;
+						DevelopmentTeam = SS33WCE6Z8;
 					};
 				};
 			};
@@ -723,7 +723,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8V8QNTU33M;
+				DEVELOPMENT_TEAM = SS33WCE6Z8;
 				INFOPLIST_FILE = LQPhotoPickerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -738,7 +738,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8V8QNTU33M;
+				DEVELOPMENT_TEAM = SS33WCE6Z8;
 				INFOPLIST_FILE = LQPhotoPickerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

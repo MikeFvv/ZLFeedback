@@ -21,6 +21,8 @@
     
     float pickerViewHeight;
     float allViewHeight;
+    NSString *myText;
+    NSString *myContact;
 
 }
 @end
@@ -226,17 +228,28 @@
 //        UIImage *image = [UIImage imageWithData: bigImageDataArray[i]];
 //        [self saveImageDocuments:image withImageName:[NSString stringWithFormat:@"%d.png",i]];
 //    }
-
+    myText = @"我的世界";
+    myContact = @"18888888888";
     NSString *recoStr = [[NSUserDefaults standardUserDefaults] objectForKey:@"rPath"];
-    NSLog(@"录音文件地址%@",recoStr);
+    NSData *voiceData = [NSData dataWithContentsOfFile: recoStr];
+    NSData *imgData = bigImageDataArray[0];
+    NSString *url = @"https://www.pigo-tech.com/feedback/postFeedback.php";
     
-    NSData *d = UIImagePNGRepresentation([UIImage imageNamed:@"锁"]);
-    [FBNetManager postUploadWithUrl:@"https://www.pigo-tech.com/feedback/postFeedback.php" fileData: bigImageDataArray[0] fileName:@"122.png" fileType:@"image/png" success:^(id responseObject) {
+    NSLog(@"录音文件地址%@",recoStr);
+ 
+    [FBNetManager postUploadWithUrl:url myText:myText myContact:myContact voiceFileData:voiceData voiceFileName:@"voice0" voiceFileType:@"audio/wav" andImgFileData:imgData imgFileName:@"img0" imgFileType:@"image/png" success:^(id responseObject) {
         NSString *s = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-        NSLog(@"22222  %@",s);
+                NSLog(@"22222  %@",s);
     } fail:^{
-        NSLog(@"hahhahaha");
+        NSLog(@"hahah");
     }];
+    
+//     postUploadWithUrl:@"https://www.pigo-tech.com/feedback/postFeedback.php" fileData: bigImageDataArray[0] fileName:@"122.png" fileType:@"image/png" success:^(id responseObject) {
+//        NSString *s = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+//        NSLog(@"22222  %@",s);
+//    } fail:^{
+//        NSLog(@"hahhahaha");
+//    }];
     
 }
 
