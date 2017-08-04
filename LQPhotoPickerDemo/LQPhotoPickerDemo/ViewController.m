@@ -71,6 +71,9 @@
     _noteTextView.textColor = [UIColor colorWithRed:153.0/255.0 green:153.0/255.0 blue:153.0/255.0 alpha:1.0];
     _noteTextView.delegate = self;
     _noteTextView.font = [UIFont boldSystemFontOfSize:14];
+
+    _noteTextView.layer.borderColor = [[UIColor blackColor]CGColor];
+    _noteTextView.layer.borderWidth = 1.0;
     
     _textNumberLabel = [[UILabel alloc]init];
     _textNumberLabel.textAlignment = NSTextAlignmentRight;
@@ -92,7 +95,7 @@
     [_submitBtn addTarget:self action:@selector(submitBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     
     self.recordView = [LVRecordView recordView];
-    self.recordView.backgroundColor = [UIColor lightGrayColor];
+//    self.recordView.backgroundColor = [UIColor lightGrayColor];
     
     
     [_scrollView addSubview:_noteTextBackgroudView];
@@ -116,15 +119,15 @@
     _noteTextBackgroudView.frame = CGRectMake(0, 0, SCREENWIDTH, noteTextHeight);
     
     //文本编辑框
-    _noteTextView.frame = CGRectMake(15, 0, SCREENWIDTH - 30, noteTextHeight);
+    _noteTextView.frame = CGRectMake(15, 5, SCREENWIDTH - 30, noteTextHeight);
     
     
     //文字个数提示Label
-    _textNumberLabel.frame = CGRectMake(0, _noteTextView.frame.origin.y + _noteTextView.frame.size.height-15, SCREENWIDTH-10, 15);
+    _textNumberLabel.frame = CGRectMake(0, _noteTextView.frame.origin.y + _noteTextView.frame.size.height-15 + 20, SCREENWIDTH-10, 15);
     
     
     //photoPicker
-    [self LQPhotoPicker_updatePickerViewFrameY:_textNumberLabel.frame.origin.y + _textNumberLabel.frame.size.height];
+    [self LQPhotoPicker_updatePickerViewFrameY:_textNumberLabel.frame.origin.y + _textNumberLabel.frame.size.height];  
     
     
     //说明文字
@@ -136,7 +139,7 @@
     _submitBtn.frame = CGRectMake(10, _explainLabel.frame.origin.y+_explainLabel.frame.size.height +30, SCREENWIDTH -20, 40);
     
 
-    self.recordView.frame = CGRectMake(10, _explainLabel.frame.origin.y+_explainLabel.frame.size.height +30+60, SCREENWIDTH -20, 100);
+    self.recordView.frame = CGRectMake(0, SCREENHEIGHT-200-50, SCREENWIDTH, 200);
     
     allViewHeight = noteTextHeight + [self LQPhotoPicker_getPickerViewFrame].size.height + 30 + 100;
     

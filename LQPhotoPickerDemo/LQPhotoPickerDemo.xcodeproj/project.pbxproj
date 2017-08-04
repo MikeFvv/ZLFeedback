@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4701B5D81F340E54005E739D /* HCFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4701B5D61F340E54005E739D /* HCFeedbackViewController.m */; };
+		4701B5DC1F3411D6005E739D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4701B5DA1F3411D6005E739D /* Main.storyboard */; };
 		4719264A1F2CD34E002451F5 /* LVRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 471926481F2CD34E002451F5 /* LVRecordView.m */; };
 		4719264B1F2CD34E002451F5 /* LVRecordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 471926491F2CD34E002451F5 /* LVRecordView.xib */; };
 		4719264E1F2CD370002451F5 /* LVRecordTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4719264D1F2CD370002451F5 /* LVRecordTool.m */; };
@@ -15,7 +17,6 @@
 		A40A89171C9E643C00C8AEBA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A89161C9E643C00C8AEBA /* main.m */; };
 		A40A891A1C9E643C00C8AEBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A89191C9E643C00C8AEBA /* AppDelegate.m */; };
 		A40A891D1C9E643C00C8AEBA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A891C1C9E643C00C8AEBA /* ViewController.m */; };
-		A40A89201C9E643C00C8AEBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40A891E1C9E643C00C8AEBA /* Main.storyboard */; };
 		A40A89221C9E643C00C8AEBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A40A89211C9E643C00C8AEBA /* Assets.xcassets */; };
 		A40A89251C9E643C00C8AEBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40A89231C9E643C00C8AEBA /* LaunchScreen.storyboard */; };
 		A40A896C1C9E648E00C8AEBA /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A40A892F1C9E648E00C8AEBA /* close@2x.png */; };
@@ -71,6 +72,9 @@
 
 /* Begin PBXFileReference section */
 		23B20D0CBB0582FF09246FF4 /* libPods-LQPhotoPickerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LQPhotoPickerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4701B5D51F340E54005E739D /* HCFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCFeedbackViewController.h; sourceTree = "<group>"; };
+		4701B5D61F340E54005E739D /* HCFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCFeedbackViewController.m; sourceTree = "<group>"; };
+		4701B5DB1F3411D6005E739D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		471926471F2CD34E002451F5 /* LVRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVRecordView.h; sourceTree = "<group>"; };
 		471926481F2CD34E002451F5 /* LVRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVRecordView.m; sourceTree = "<group>"; };
 		471926491F2CD34E002451F5 /* LVRecordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LVRecordView.xib; sourceTree = "<group>"; };
@@ -86,7 +90,6 @@
 		A40A89191C9E643C00C8AEBA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A40A891B1C9E643C00C8AEBA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A40A891C1C9E643C00C8AEBA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		A40A891F1C9E643C00C8AEBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A40A89211C9E643C00C8AEBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A40A89241C9E643C00C8AEBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A40A89261C9E643C00C8AEBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -243,11 +246,13 @@
 				A40A89191C9E643C00C8AEBA /* AppDelegate.m */,
 				A40A891B1C9E643C00C8AEBA /* ViewController.h */,
 				A40A891C1C9E643C00C8AEBA /* ViewController.m */,
+				4701B5D51F340E54005E739D /* HCFeedbackViewController.h */,
+				4701B5D61F340E54005E739D /* HCFeedbackViewController.m */,
 				47F38E4F1F1EEFB600C012C9 /* FBNetManager.h */,
 				47F38E501F1EEFB600C012C9 /* FBNetManager.m */,
-				A40A891E1C9E643C00C8AEBA /* Main.storyboard */,
 				A40A89211C9E643C00C8AEBA /* Assets.xcassets */,
 				A40A89231C9E643C00C8AEBA /* LaunchScreen.storyboard */,
+				4701B5DA1F3411D6005E739D /* Main.storyboard */,
 				A40A89261C9E643C00C8AEBA /* Info.plist */,
 				A40A89151C9E643C00C8AEBA /* Supporting Files */,
 			);
@@ -266,7 +271,6 @@
 			isa = PBXGroup;
 			children = (
 				471926461F2CD34E002451F5 /* CustomView */,
-				A40A892D1C9E648E00C8AEBA /* img */,
 				A40A893A1C9E648E00C8AEBA /* LQImgPicker */,
 				A40A89661C9E648E00C8AEBA /* LQPhotoPickerViewController.h */,
 				A40A89671C9E648E00C8AEBA /* LQPhotoPickerViewController.m */,
@@ -289,12 +293,14 @@
 				A40A89381C9E648E00C8AEBA /* plus@2x.png */,
 				A40A89391C9E648E00C8AEBA /* plus@3x.png */,
 			);
-			path = img;
+			name = img;
+			path = ../img;
 			sourceTree = "<group>";
 		};
 		A40A893A1C9E648E00C8AEBA /* LQImgPicker */ = {
 			isa = PBXGroup;
 			children = (
+				A40A892D1C9E648E00C8AEBA /* img */,
 				A40A893B1C9E648E00C8AEBA /* CollectionViewInfo */,
 				A40A89421C9E648E00C8AEBA /* JJPhotoViewer */,
 				A40A894C1C9E648E00C8AEBA /* LQImgPickerActionSheet.h */,
@@ -505,10 +511,10 @@
 				A40A89731C9E648E00C8AEBA /* ico_check_select@3x.png in Resources */,
 				A40A89751C9E648E00C8AEBA /* plus@2x.png in Resources */,
 				A40A897E1C9E648E00C8AEBA /* none.png in Resources */,
+				4701B5DC1F3411D6005E739D /* Main.storyboard in Resources */,
 				A40A89701C9E648E00C8AEBA /* ico_check_nomal@3x.png in Resources */,
 				A40A898C1C9E648E00C8AEBA /* LQPhotoViewCell.xib in Resources */,
 				4719264B1F2CD34E002451F5 /* LVRecordView.xib in Resources */,
-				A40A89201C9E643C00C8AEBA /* Main.storyboard in Resources */,
 				A40A89761C9E648E00C8AEBA /* plus@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -588,6 +594,7 @@
 				E6F645171D61AE7D000FFE47 /* UIButton+WebCache.m in Sources */,
 				A40A891D1C9E643C00C8AEBA /* ViewController.m in Sources */,
 				A40A89791C9E648E00C8AEBA /* MHeadImaView.m in Sources */,
+				4701B5D81F340E54005E739D /* HCFeedbackViewController.m in Sources */,
 				A40A898A1C9E648E00C8AEBA /* LQPhotoPickerViewController.m in Sources */,
 				A40A89821C9E648E00C8AEBA /* MImaCell.m in Sources */,
 				A40A897B1C9E648E00C8AEBA /* JJOneScrollView.m in Sources */,
@@ -614,10 +621,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A40A891E1C9E643C00C8AEBA /* Main.storyboard */ = {
+		4701B5DA1F3411D6005E739D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A40A891F1C9E643C00C8AEBA /* Base */,
+				4701B5DB1F3411D6005E739D /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

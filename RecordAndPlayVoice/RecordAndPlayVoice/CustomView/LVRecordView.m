@@ -9,6 +9,8 @@
 #import "LVRecordView.h"
 #import "LVRecordTool.h"
 
+static int myTime = 10;
+
 @interface LVRecordView () <LVRecordToolDelegate>
 /** 录音工具 */
 @property (nonatomic, strong) LVRecordTool *recordTool;
@@ -22,7 +24,7 @@
 /** 播放按钮 */
 @property (weak, nonatomic) IBOutlet UIButton *playBtn;
 @property (weak, nonatomic) IBOutlet UILabel *timeLB;
-
+@property (nonatomic,strong) NSTimer *myTimer;
 @end
 
 @implementation LVRecordView
@@ -61,7 +63,36 @@
 // 按下
 - (void)recordBtnDidTouchDown:(UIButton *)recordBtn {
     [self.recordTool startRecording];
+    self.myTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timerMove) userInfo:nil repeats:YES];
 }
+
+-(void)timerMove{
+    myTime --;NSLog(@"time : %d",myTime);
+    if (myTime == 0) {//停止录音
+        [_myTimer invalidate];
+        _myTimer=nil;
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"录音结束" message:@"最多允许录音30秒" delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+        alert.delegate=self;
+        [alert show];
+        [self.recordTool stopRecording];
+        NSFileManager *manager = [NSFileManager defaultManager];
+        NSLog(@"%@", self.recordTool.filePath);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if ([manager fileExistsAtPath: self.recordTool.filePath]){
+                
+                
+                
+            }
+            self.imageView.image = [UIImage imageNamed:@"mic_0"];
+        });
+
+    }
+    
+    
+}
+
+
+
 
 // 点击
 - (void)recordBtnDidTouchUpInside:(UIButton *)recordBtn {

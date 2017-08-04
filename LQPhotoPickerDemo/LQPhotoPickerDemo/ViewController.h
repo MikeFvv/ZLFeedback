@@ -14,6 +14,8 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
+
+
 @property(nonatomic,strong) UIView *noteTextBackgroudView;
 //备注
 @property(nonatomic,strong) UITextView *noteTextView;

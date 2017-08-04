@@ -6,16 +6,20 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "mic_6.png",
+      "filename" : "mic_6@2x.jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "mic_6@3x.png",
       "scale" : "3x"
     }
   ],
   "info" : {
     "version" : 1,
     "author" : "xcode"
+  },
+  "properties" : {
+    "template-rendering-intent" : "original"
   }
 }
