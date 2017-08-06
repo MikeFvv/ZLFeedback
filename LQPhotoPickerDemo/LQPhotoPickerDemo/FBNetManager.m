@@ -23,20 +23,16 @@
                           };
     [manager POST:urlStr parameters:dic constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         
-//        NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"头像1.jpeg" withExtension:nil];
-//        
-//        // 要上传保存在服务器中的名称
-//        // 使用时间来作为文件名 2014-04-30 14:20:57.png
-//        // 让不同的用户信息,保存在不同目录中
-//                NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//                // 设置日期格式
-//                formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-//                NSString *fileName = [formatter stringFromDate:[NSDate date]];
+        if (imgFileData == nil ) {
         
-        //@"image/png"
+        }else{
+            [formData appendPartWithFileData:imgFileData name:@"myphoto" fileName:imgFileName mimeType: imgFileTye];
+        }
+        if (voiceFileData) {
+            [formData appendPartWithFileData:voiceFileData name:@"myvoice" fileName: voiceFileName mimeType: voiceFileTye];
+
+        }
         
-        [formData appendPartWithFileData:imgFileData name:@"myphoto" fileName:imgFileName mimeType: imgFileTye];
-        [formData appendPartWithFileData:voiceFileData name:@"myvoice" fileName: voiceFileName mimeType: voiceFileTye];
         
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) {

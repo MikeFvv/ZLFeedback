@@ -11,7 +11,7 @@
 #import "LVRecordView.h"
 
 
-@interface HCFeedbackViewController : LQPhotoPickerViewController
+@interface HCFeedbackViewController : LQPhotoPickerViewController<UITextViewDelegate,UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIView *hcView;
 //@property (weak, nonatomic) IBOutlet LVRecordView *recordView;
 @property (nonatomic, strong) LVRecordView *recordView;

@@ -71,6 +71,7 @@ static int myTime = 10;
     if (myTime == 0) {//停止录音
         [_myTimer invalidate];
         _myTimer=nil;
+        myTime = 10;
         UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"录音结束" message:@"最多允许录音30秒" delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
         alert.delegate=self;
         [alert show];
@@ -80,7 +81,7 @@ static int myTime = 10;
         dispatch_async(dispatch_get_main_queue(), ^{
             if ([manager fileExistsAtPath: self.recordTool.filePath]){
                 
-                
+                self.timeLB.text = [NSString stringWithFormat:@"%ld秒%.2fKb", (long)self.recordTool.recorder.currentTime,[[manager attributesOfItemAtPath:self.recordTool.filePath error:nil] fileSize]/1024.0];
                 
             }
             self.imageView.image = [UIImage imageNamed:@"mic_0"];

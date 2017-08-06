@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="hCt-HX-bVn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="hCt-HX-bVn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="PLj-1l-3a9" kind="relationship" relationship="rootViewController" id="Xdf-C8-cAp"/>
+                        <segue destination="PLj-1l-3a9" kind="relationship" relationship="rootViewController" id="HBl-5o-MoV"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S4I-AN-X2Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -70,7 +70,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPo-H5-fCe">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPo-H5-fCe">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F9o-Mk-GBe">
@@ -87,6 +87,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="PLj-1l-3a9" id="Wd8-V9-Zdv"/>
+                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="553-bE-6fd">
                                                 <rect key="frame" x="15" y="54.5" width="37.5" height="19.5"/>
@@ -100,13 +103,22 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="XJW-bc-dSl"/>
                                                 </constraints>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="PLj-1l-3a9" id="Cc0-R1-ZJJ"/>
+                                                </connections>
                                             </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTE-cg-ycl">
+                                                <rect key="frame" x="325.5" y="159" width="34.5" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="TTE-cg-ycl" firstAttribute="top" secondItem="2Ex-HP-iaM" secondAttribute="bottom" constant="15" id="AHN-GV-b5B"/>
                                             <constraint firstItem="553-bE-6fd" firstAttribute="top" secondItem="rgZ-hQ-1PB" secondAttribute="bottom" constant="20" id="D3U-t9-Ylg"/>
                                             <constraint firstAttribute="height" constant="611" id="Y2Q-NC-aV6"/>
                                             <constraint firstItem="553-bE-6fd" firstAttribute="leading" secondItem="F9o-Mk-GBe" secondAttribute="leading" constant="15" id="a5x-c9-ovr"/>
@@ -115,6 +127,7 @@
                                             <constraint firstItem="piH-jZ-k68" firstAttribute="leading" secondItem="rgZ-hQ-1PB" secondAttribute="trailing" constant="5" id="ppA-nZ-rf0"/>
                                             <constraint firstItem="rgZ-hQ-1PB" firstAttribute="leading" secondItem="F9o-Mk-GBe" secondAttribute="leading" constant="15" id="tJT-FW-g4T"/>
                                             <constraint firstItem="2Ex-HP-iaM" firstAttribute="top" secondItem="553-bE-6fd" secondAttribute="bottom" constant="10" id="uua-Ro-OT0"/>
+                                            <constraint firstAttribute="trailing" secondItem="TTE-cg-ycl" secondAttribute="trailing" constant="15" id="vVv-6R-2ep"/>
                                             <constraint firstAttribute="trailing" secondItem="2Ex-HP-iaM" secondAttribute="trailing" constant="15" id="wYB-d2-RHx"/>
                                             <constraint firstItem="rgZ-hQ-1PB" firstAttribute="top" secondItem="F9o-Mk-GBe" secondAttribute="top" constant="15" id="z7m-GK-4ZX"/>
                                         </constraints>
@@ -140,10 +153,15 @@
                     <navigationItem key="navigationItem" title="用户反馈" id="Gab-sX-JSL">
                         <barButtonItem key="rightBarButtonItem" title="提交" id="cvH-5v-Ed6">
                             <color key="tintColor" red="0.87450980389999999" green="0.47450980390000003" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="submit:" destination="PLj-1l-3a9" id="NUZ-xp-TrH"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="hcView" destination="WPo-H5-fCe" id="kcE-NN-jp4"/>
+                        <outlet property="phoneTF" destination="piH-jZ-k68" id="hIM-En-dqT"/>
+                        <outlet property="textNumberLabel" destination="TTE-cg-ycl" id="xDE-FB-CxH"/>
                         <outlet property="txView" destination="2Ex-HP-iaM" id="KiO-ty-dtb"/>
                     </connections>
                 </viewController>
